@@ -1,0 +1,19 @@
+ID: DEMO66
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: DB1
+   type: hdb
+   path: DB1
+   requires:
+    - name: hdi_DB1
+
+resources:
+ - name: hdi_DB1
+   parameters:
+      config:
+         schema: DB555
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
